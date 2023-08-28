@@ -13,8 +13,12 @@ function go($txt)
 {
   header("location:$txt");
 }
+function alert($txt)
+{
+  echo  "<script> alert('$txt')</script>";
+}
 
-// ban
+// ban & update_session
 
 function check()
 {
@@ -46,11 +50,11 @@ check();
 
 
 
-function checklogin($txt)
+function checklogin()
 {
-  if (!isset($_SESSION['uname'])) {
+  if (isset($_SESSION['un'])) {
   } else {
-    go("index.php");
+    go("user/login.php");
   }
 }
 function checkad()
@@ -60,6 +64,7 @@ function checkad()
     go("../index.php");
   }
 }
+
 function checkr()
 {
   if (isset($_SESSION['rr']) && $_SESSION['rr'] == '2') {
@@ -68,7 +73,4 @@ function checkr()
   }
 }
 
-function alert($txt)
-{
-  echo  "<script> alert('$txt')</script>";
-}
+

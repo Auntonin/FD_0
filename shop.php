@@ -1,4 +1,6 @@
-<?php require_once("Condb.php"); ?>
+<?php require_once("Condb.php"); 
+checklogin();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,13 +37,14 @@
                 <th>ดูสินค้า</th>
             </tr>
             <?php
-            if (isset($_POST['keyword']) && $_POST['keyword'] !== "") {
-                $keyword = $_POST['keyword'];
-                $sql = "SELECT p.*, u.user_name
-                        FROM product p INNER JOIN users u
-                        ON p.r_id = u.user_id
-                        WHERE pro_name LIKE '%$keyword%' OR user_name LIKE '%$keyword%'";
-            } elseif(isset($_GET['cate']) && $_GET['cate'] !== ""){
+            //  if (isset($_POST['keyword']) && $_POST['keyword'] !== "") {
+            //     $keyword = $_POST['keyword'];
+            //     $sql = "SELECT p.*, u.user_name
+            //             FROM product p INNER JOIN users u
+            //             ON p.r_id = u.user_id
+            //             WHERE pro_name LIKE '%$keyword%' OR user_name LIKE '%$keyword%'";
+            // }
+            if(isset($_GET['cate']) && $_GET['cate'] !== ""){
                 $cate=$_GET['cate'];
                 $sql="SELECT p.*, c.cate_name FROM product p INNER JOIN category c ON p.cate_id = c.cate_id WHERE p.cate_id='$cate'";
             }
