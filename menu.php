@@ -4,7 +4,10 @@
     <a class="p-2 text-dark" href="index.php">HOME</a>
     <a class="p-2 text-dark" href="shop.php">SHOP</a>
     <a class="p-2 text-dark" href="order.php">CART</a>
-    <?php if ($_SESSION['rr'] == 0 || $_SESSION['rd'] == 0) { ?>
+    <?php if (isset($_SESSION['rr']) && isset($_SESSION['rd'])) { 
+      if($_SESSION['rr']==0 || $_SESSION['rd']==0){
+      ?>
+
       <!-- Button trigger modal -->
       <a class="p-2 text-dark" data-toggle="modal" data-target="#exampleModalCenter">
         REGISTER
@@ -32,7 +35,7 @@
       </div>
 
 
-    <?php }
+    <?php }}
     if (isset($_SESSION['un']) && $_SESSION['un'] != "") {
     ?>
   </nav>

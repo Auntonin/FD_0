@@ -60,6 +60,13 @@ function checkad()
     go("../index.php");
   }
 }
+function checkr()
+{
+  if (isset($_SESSION['rr']) && $_SESSION['rr'] == '2') {
+  } else {
+    go("../index.php");
+  }
+}
 
 function alert($txt)
 {

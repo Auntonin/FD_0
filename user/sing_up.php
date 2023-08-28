@@ -10,7 +10,7 @@ if(isset($_POST['username'])){
     $sql = "SELECT * FROM users WHERE user_name='".$un."' ";
     $result=$conn->query($sql);
     if($result->num_rows==0){
-    $sql = "INSERT INTO users VALUES (0,'$un','$ps','$ad',1,1,0)";
+    $sql = "INSERT INTO users(user_name,user_password,user_ad) VALUES ('$un','$ps','$ad')";
         if($result=$conn->query($sql)){
             go("login.php");
         }else{
