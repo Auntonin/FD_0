@@ -11,7 +11,11 @@ checkad();
 </head>
 <body>
     <?php require_once("menu.php")?>
-    
+    <div class="container">
+        <div class="main">
+            <h1 class="mx-auto my-5" style="width:200px;height:200px;">ADMIN</h1>
+        </div>
+    </div>
     <!-- <div class="container">
         <div class="main">
             <h1>asdasdadasd</h1><br>

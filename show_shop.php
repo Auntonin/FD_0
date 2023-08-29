@@ -22,26 +22,26 @@
                         <th>ดูร้านอาหาร</th>
                   </tr>
                   <?php
+                  if(isset($_POST['keyword'])&&$_POST['keyword']!='')
                $sql = "SELECT r.*,c.cr_name FROM 
-               restaurant r INNER JOIN cate_restaurant c
-               ON r.r_cate = c.cr_id";
+               users r INNER JOIN cate_restaurant c
+               ON r.cr_id = c.cr_id 
+               WHERE r.restaurant=2";
                   $result = $conn->query($sql);
                   while ($rs = $result->fetch_array()) {
-                        $cn = $rs['r_name'];
-                        $rid = $rs['r_id'];
                         ?>
                         <tr>
                             <td>
-                                <?= $rs['r_id']; ?>
+                                <?= $rs['user_id']; ?>
                               </td>
                               <td>
-                                <img src="img/Profile/<?= $rs['r_image'] ?>" width="120" height="110">
+                                <img src="img/Profile/user/<?= $rs['user_image'] ?>" width="120" height="110">
                               </td>
                               <td>
                                 <?= $rs['cr_name'] ?>
                               </td>
                               <td>
-                                <?= $rs['r_name'] ?>
+                                <?= $rs['user_name'] ?>
                               </td>
                               <td>
                                 <a name="product_order" href="show_pro.php?rid=<?= $rid ?>"

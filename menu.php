@@ -45,7 +45,7 @@
  
   <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink"> -->
     <?php if (isset($_SESSION['ulevel']) && $_SESSION['ulevel'] == "admin") {
-    ?> <a class="text-dark" href="admin/admin.php">admin </a>
+    ?> <a class="text-dark p-2" href="admin/admin.php">admin </a>
     <?php  } else ?>
 
 
