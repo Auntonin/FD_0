@@ -53,21 +53,24 @@ if (isset($_SESSION['un'])) {
                     $sql1 = "SELECT * FROM product WHERE pro_id='" . $_SESSION["strProductID"][$i] . "' ";
                     $result1 = $conn->query($sql1);
                     $rs_pro = $result1->fetch_array();
-
                     $_SESSION["price"][$i] = $rs_pro['pro_price'];
+                    $_SESSION["discount"][$i] =$rs_pro['pro_discount']; 
                     $Total = $_SESSION["strQty"][$i];
-                    $sump = $Total * $_SESSION['price'][$i];
+                    $discount = $_SESSION["discount"][$i]; // Get the discount percentage
+                    $discountedPrice = $_SESSION["price"][$i] * (1 - ($discount / 100)); // Calculate the discounted price
+                    $sump = $Total * $discountedPrice; // Calculate the sum for this product
                     $sumall = $sumall + $sump;
                     ?>
                     <tr>
                       <td>
                         <?= $ord ?>
+                        
                       </td>
                       <td>
                         <?= $rs_pro['pro_name'] ?>
                       </td>
                       <td>
-                        <?= $rs_pro['pro_price'] ?>
+                        <?=  $discountedPrice  ?>
                       </td>
                       <td><?= $_SESSION["strQty"][$i] ?>
                       </td>
@@ -78,6 +81,7 @@ if (isset($_SESSION['un'])) {
                     </tr>
                     <?php
                     $ord++;
+                    
                   }
                 }
                 ?>
@@ -99,7 +103,9 @@ if (isset($_SESSION['un'])) {
         </form>
         <div style="text-align:right">
           <a href="shop.php"><button type="button" class="btn btn-outline-primary me-2">เลือกสินค้า</button></a>
-          <button type="button" class="btn btn-primary me-2">ยืนยันคำสั่งซื้อ</button>
+          <a type="button" class="btn btn-primary me-2" href="order/add_order.php?submit" >ยืนยันคำสั่งซื้อ</a>
+          <?php getdt()
+?>
         </div>
       </div>
       <script src="Bootstrap/dist/js/code.jquery.com_jquery-3.7.1.min.js"></script>

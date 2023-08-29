@@ -38,6 +38,7 @@
             <div class="col-4">
                 <h1 class="mt-3"><?= $pn ?></h1><br>
                 <h2 class="mt-3">ราคา :<?= $pp ?></h2>
+                <p>ส่วนลด  <?= number_format($rs['pro_discount']); ?> %</p>
                 <h2>ประเภท :<?= $pc ?></h2>
                 <a  name="product_order" href="order/order.php?p_id=<?= $pid ?>" class='btn btn-outline-primary me-2'>add to cart</a>
                     </td>

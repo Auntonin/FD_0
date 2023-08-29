@@ -55,9 +55,9 @@ checklogin();
                         ON p.cate_id = c.cate_id";
             }
             $result = $conn->query($sql);
-            while ($rs = $result->fetch_assoc()) {
-                $cn = $rs['cate_name'];
-                $pid = $rs['pro_id'];
+            while ($rs = $result->fetch_array()) {
+                // $d=$rs['pro_dicount'];
+                $pid=$rs['pro_id'];
                 ?>
                 <tr>
                     <td>
@@ -71,6 +71,8 @@ checklogin();
                     </td>
                     <td>
                         <?= number_format($rs['pro_price']); ?>
+                        <p>ส่วนลด  <?= number_format($rs['pro_discount']); ?> %</p>
+                       
                     </td>
                     <td>
                         <a href="show_pro.php?pid=<?= $pid ?>" class='btn btn-outline-primary me-2'>View</a>
