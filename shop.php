@@ -81,6 +81,6 @@ checklogin();
             ?>
         </table>
     </div>
-    <script src="Bootstrap/dist/js/bootstrap.min.js"></script>
-</body>
+    <script src="Bootstrap/dist/js/code.jquery.com_jquery-3.7.1.min.js"></script>
+   <script src="Bootstrap/dist/js/bootstrap.min.js"></script></body>
 </html>

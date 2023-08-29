@@ -69,8 +69,7 @@ if (isset($_SESSION['un'])) {
                       <td>
                         <?= $rs_pro['pro_price'] ?>
                       </td>
-                      <td><input style="text-align:center;" value="<?= $_SESSION["strQty"][$i] ?>" type="number" id="p_qty">
-                      <!-- <input id="p_id" type="hidden" value='<?= $_SESSION["strProductID"][$i]?>'> -->
+                      <td><?= $_SESSION["strQty"][$i] ?>
                       </td>
                       <td>
                         <?= $sump ?>
@@ -99,7 +98,7 @@ if (isset($_SESSION['un'])) {
           </div>
         </form>
         <div style="text-align:right">
-          <a href="index.php"><button type="button" class="btn btn-outline-primary me-2">เลือกสินค้า</button></a>
+          <a href="shop.php"><button type="button" class="btn btn-outline-primary me-2">เลือกสินค้า</button></a>
           <button type="button" class="btn btn-primary me-2">ยืนยันคำสั่งซื้อ</button>
         </div>
       </div>

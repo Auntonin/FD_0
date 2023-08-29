@@ -9,9 +9,9 @@
     
 </head>
 <body>
-    <?php require_once("menu.php")?>
-
+    <?php require_once("menu.php");?>
      <div class="main">
+
     <table class="table table-striped">
                   <tr>
                         
@@ -22,13 +22,20 @@
                         <th>ดูร้านอาหาร</th>
                   </tr>
                   <?php
-                  if(isset($_POST['keyword'])&&$_POST['keyword']!='')
-               $sql = "SELECT r.*,c.cr_name FROM 
-               users r INNER JOIN cate_restaurant c
-               ON r.cr_id = c.cr_id 
-               WHERE r.restaurant=2";
+                  if(isset($_POST['keyword'])&&$_POST['keyword']!=''){
+                    $keyword=$_POST['keyword'];
+                    $sql = "SELECT u.*,c.cr_name FROM 
+                    users u INNER JOIN cate_restaurant c
+                    ON u.cr_id = c.cr_id 
+                    WHERE u.restaurant=2 AND u.user_name LIKE  '%$keyword%'";
+                  }else{
+                    $sql = "SELECT u.*,c.cr_name FROM 
+                    users u INNER JOIN cate_restaurant c
+                    ON u.cr_id = c.cr_id 
+                    WHERE u.restaurant=2";
+                  }
                   $result = $conn->query($sql);
-                  while ($rs = $result->fetch_array()) {
+                  while ($rs = $result->fetch_assoc()) {
                         ?>
                         <tr>
                             <td>
@@ -54,6 +61,6 @@
             </table>
 
     </div>
-    <script src="Bootstrap/dist/js/bootstrap.min.js"></script>
-</body>
+    <script src="Bootstrap/dist/js/code.jquery.com_jquery-3.7.1.min.js"></script>
+   <script src="Bootstrap/dist/js/bootstrap.min.js"></script></body>
 </html>
