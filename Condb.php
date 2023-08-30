@@ -13,10 +13,30 @@ function go($txt)
 {
   header("location:$txt");
 }
+
+function gotop($txt)
+{
+  echo  "<script >window.location.replace('".$txt."');</script>";
+}
+
 function alert($txt)
 {
   echo  "<script> alert('$txt')</script>";
 }
+ 
+
+  // function jconfirm() {
+  //   <script>
+  //   let text;
+  //   if (confirm("Press a button!")) {
+  //     text = "You pressed OK!";
+  //   } else {
+  //     text = "You canceled!";
+  //   }
+  //   </script>
+  // }
+
+  
 
 // ban & update_session
 

@@ -7,7 +7,7 @@ if (isset($_GET['submit'])) {
     // Sanitize user input to prevent SQL injection
     $uid = intval($_SESSION['uid']);
 
-    $sql = "INSERT INTO orders(user_id, date_time) VALUES ($uid, '$dt')";
+    $sql = "INSERT INTO orders(user_id,r_id,date_time) VALUES ($uid,$_SESSION[rest_id],'$dt')";
     if ($conn->query($sql)) {
         $i_id = $conn->insert_id;
 
@@ -28,9 +28,12 @@ if (isset($_GET['submit'])) {
                 $_SESSION["price"][$i] = $rs_pro['pro_price'];
                 $_SESSION["discount"][$i] = $rs_pro['pro_discount'];
                 $Total = $_SESSION["strQty"][$i];
+                
+                //ส่วนลด%
                 $discount = $_SESSION["discount"][$i];
                 $discountedPrice = $_SESSION["price"][$i] * (1 - ($discount / 100));
                 $sump = $Total * $discountedPrice;
+
                 $sumall += $sump;
                 insertod($i_id, $_SESSION["strProductID"][$i], $_SESSION["strQty"][$i], $sump);
             }

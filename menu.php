@@ -64,8 +64,7 @@
     <img src="img/Profile/user/<?= $_SESSION['pro_im']; ?>" width="40" height="40">
     <!-- ::after -->
   </a>
-  </div>
-</div>
+ 
 
 
 <?php
@@ -74,6 +73,7 @@
   <a type="button" class="btn btn-outline-primary me-2" href="user/login.php">Login</a>
   <a type="button" class="btn btn-primary ml-2" href="user/sing_up.php">Sign-up</a>
 <?php } ?>
-
+</div>
+</div>
 
 

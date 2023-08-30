@@ -26,6 +26,7 @@
         $pp = $rs['pro_price'];
         $pc = $rs['cate_name'];
         $pi = $rs['pro_image'];
+        $rid= $rs['r_id'];
     } else {
         go("shop.php");
         // echo $_GET['pid'];
@@ -40,7 +41,8 @@
                 <h2 class="mt-3">ราคา :<?= $pp ?></h2>
                 <p>ส่วนลด  <?= number_format($rs['pro_discount']); ?> %</p>
                 <h2>ประเภท :<?= $pc ?></h2>
-                <a  name="product_order" href="order/order.php?p_id=<?= $pid ?>" class='btn btn-outline-primary me-2'>add to cart</a>
+                <a  name="product_order" href="order/order.php?p_id=<?= $pid ?>&r_id=<?= $rid?>" class='btn btn-outline-primary me-2'>add to cart</a>
+           
                     </td>
             </div>
         </div>
