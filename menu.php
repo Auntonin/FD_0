@@ -2,8 +2,8 @@
   <h5 class="my-0 mr-md-auto font-weight-normal">FOOD_DELIVERY</h5>
   <nav class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-dark" href="index.php">HOME</a>
-    <a class="p-2 text-dark" href="shop.php">SHOP</a>
-    <a class="p-2 text-dark" href="order/order.php">CART</a>
+    <a class="p-2 text-dark" href="show_shop.php">SHOP</a>
+
     <?php if (isset($_SESSION['rr']) && isset($_SESSION['rd'])) {
       if ($_SESSION['rr'] == 0 || $_SESSION['rd'] == 0) {
     ?>
@@ -39,6 +39,7 @@
     }
     if (isset($_SESSION['un']) && $_SESSION['un'] != "") {
       ?>
+          <a class="p-2 text-dark" href="order/order.php">CART</a>
   </nav>
 
 

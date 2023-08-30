@@ -45,6 +45,7 @@ if (isset($_GET['submit'])) {
             unset($_SESSION["price"]);
             unset($_SESSION["strQty"]);
             unset($_SESSION["discount"]);
+            unset($_SESSION['rest_id']);
 
             go("show_order_status.php"); // Make sure go() is defined somewhere
         } else {

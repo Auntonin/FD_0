@@ -9,12 +9,12 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection Fail = " . $conn->connect_error);
 }
-function go($txt)
-{
-  header("location:$txt");
-}
+// function gon($txt)
+// {
+//   header("location:$txt");
+// }
 
-function gotop($txt)
+function go($txt)
 {
   echo  "<script >window.location.replace('".$txt."');</script>";
 }

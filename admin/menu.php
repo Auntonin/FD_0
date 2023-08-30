@@ -23,7 +23,7 @@
       if (isset($_SESSION['rd']) && $_SESSION['rd'] == 2) { ?>
       <a class="p-2 text-dark" href="../raider.php">raider</a><?php } ?>
       
-    <a class="p-2 text-dark" href="user/log-out.php">log-out</a>
+    <a class="p-2 text-dark" href="../user/log-out.php">log-out</a>
     <a  href="../user/edit_user.php" role="button">
     <img src="../img/Profile/user/<?= $_SESSION['pro_im']; ?>" width="40" height="40">
     <!-- ::after -->

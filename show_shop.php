@@ -1,4 +1,5 @@
-<?php require_once("Condb.php")?>
+<?php require_once("Condb.php");
+checklogin();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +37,7 @@
                   }
                   $result = $conn->query($sql);
                   while ($rs = $result->fetch_assoc()) {
+                    $rid=$rs['user_id'];
                         ?>
                         <tr>
                             <td>
@@ -51,8 +53,7 @@
                                 <?= $rs['user_name'] ?>
                               </td>
                               <td>
-                                <a name="product_order" href="show_pro.php?rid=<?= $rid ?>"
-                                          class='btn btn-outline-primary me-2'>view</a>
+                                <a href="shop.php?r_id=<?= $rid ?>" class='btn btn-outline-primary me-2'>view</a>
                             </td>
                         </tr>
                         <?php
