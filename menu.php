@@ -40,6 +40,7 @@
     if (isset($_SESSION['un']) && $_SESSION['un'] != "") {
       ?>
           <a class="p-2 text-dark" href="order/order.php">CART</a>
+          <a class="p-2 text-dark" href="show_order_record.php">ORDER</a>
   </nav>
 
 

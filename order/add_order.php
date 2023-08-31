@@ -41,6 +41,7 @@ if (isset($_GET['submit'])) {
 
         $sql = "UPDATE orders SET sumprice='$sumall' WHERE o_id='$i_id'";
         if ($conn->query($sql)) {
+            unset($_SESSION["intLine"]);
             unset($_SESSION["strProductID"]);
             unset($_SESSION["price"]);
             unset($_SESSION["strQty"]);

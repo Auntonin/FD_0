@@ -12,7 +12,7 @@ if(isset($_POST['username'])){
         $rs=$result->fetch_array();
         $_SESSION['uid'] = $rs['user_id'];
         $_SESSION['un'] = $rs['user_name'];
-        $_SESSION['us'] = $rs['user_satus'];
+        // $_SESSION['us'] = $rs['user_satus'];
         $_SESSION['ulevel'] = $rs['user_level'];
         $_SESSION['pro_im'] = $rs['user_image'];
         $_SESSION['rr'] = $rs['restaurant'];

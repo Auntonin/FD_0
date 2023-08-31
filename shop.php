@@ -10,7 +10,16 @@ checklogin();
     <link rel="stylesheet" href="Bootstrap/dist/css/bootstrap.min.css"></head>
 <body>
     <?php require_once("menu.php"); ?>
+    <div class="container">
     <div class="main">
+        <?php $result=$conn->query("SELECT * FROM users WHERE user_id='".$_GET['r_id']."'");
+        $rs=$result->fetch_array();
+        $im=$rs['user_image'];
+        $rn=$rs['user_name'];
+        ?>
+    <img src="img/Profile/user/<?= $im?>" alt="Italian Trulli" class="mt-5" style="width:200px;height:200px;">
+    <h4>ร้าน : <?= $rn?></h4>
+<br>
         <h3>ประเภทอาหาร</h3>
     <form action="" method="GET ">
     <select class="custom-select my-3 mx-2" name="cate">
@@ -21,15 +30,13 @@ checklogin();
   while($res=$re->fetch_array()){
 ?>
 <option value="<?=$res['cate_id']?>"><?=$res['cate_name']?></option>
-
 <?php
   }
 }
   ?>
-  
 </select>
 <input type="hidden" name="r_id" value="<?= $rid ?>">
-<button type="submit">submit</button>
+<button class="btn btn-outline-primary mb-2" type="submit">submit</button>
 </form>
         <table class="table table-striped">
             <tr>
@@ -95,6 +102,7 @@ checklogin();
             }
 ?>
         </table>
+    </div>
     </div>
     <script src="Bootstrap/dist/js/code.jquery.com_jquery-3.7.1.min.js"></script>
    <script src="Bootstrap/dist/js/bootstrap.min.js"></script></body>

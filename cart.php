@@ -21,13 +21,13 @@ if (isset($_SESSION['un'])) {
 
     <body>
 
-      <div class="container">
+    
 
         <!-- nav_bar -->
         <?php require_once('menu.php'); ?>
         <!-- end_nav_bar -->
 
-
+        <div class="container">
 
         <form action="" method="POST">
           <div class="row">
@@ -104,8 +104,7 @@ if (isset($_SESSION['un'])) {
         <div style="text-align:right">
           <a href="shop.php"><button type="button" class="btn btn-outline-primary me-2">เลือกสินค้า</button></a>
           <a type="button" class="btn btn-primary me-2" href="order/add_order.php?submit" >ยืนยันคำสั่งซื้อ</a>
-          <?php getdt()
-?>
+          
         </div>
       </div>
       <script src="Bootstrap/dist/js/code.jquery.com_jquery-3.7.1.min.js"></script>

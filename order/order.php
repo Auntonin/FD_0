@@ -12,11 +12,7 @@ function updateQuantity($productID, $newQuantity) {
 if(isset($_GET["r_id"])&&isset($_SESSION['uid'])&&$_GET["r_id"]==$_SESSION['uid']){
 	alert("กรุณาอย่าสั่งอาหารจากร้านท่านเอง");
 	go("../show_shop.php");
-	// exit();
-}else{
-
-
-
+}elseif(isset($_GET['p_id'])){
 	if(!isset($_SESSION["intLine"]))  
 	{
 		 $_SESSION['rest_id'] = $_GET["r_id"]; 
@@ -24,7 +20,6 @@ if(isset($_GET["r_id"])&&isset($_SESSION['uid'])&&$_GET["r_id"]==$_SESSION['uid'
 		 $_SESSION["strProductID"][0] = $_GET["p_id"]; 
 		 $_SESSION["strQty"][0] = 1;                
 		 go("../cart.php");
-	
 	}
 	elseif(isset($_SESSION['rest_id'])&&isset($_GET["r_id"])&&$_SESSION['rest_id'] != $_GET["r_id"]){
 		alert("กรุณาสั่งสินค้าจากร้านเดียวกัน");
@@ -46,8 +41,10 @@ if(isset($_GET["r_id"])&&isset($_SESSION['uid'])&&$_GET["r_id"]==$_SESSION['uid'
 			 $_SESSION["strQty"][$intNewLine] = 1;
 			 
 		}
-		 go("../cart.php");
+	go("../cart.php");
 	}
-	
+}else{
+	alert("กรุณาเลือกรายการอาหารก่อน");
+	go("../index.php");
 }
 ?>
