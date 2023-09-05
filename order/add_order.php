@@ -48,7 +48,7 @@ if (isset($_GET['submit'])) {
             unset($_SESSION["discount"]);
             unset($_SESSION['rest_id']);
 
-            go("show_order_status.php"); // Make sure go() is defined somewhere
+            go("../show_order_record.php"); // Make sure go() is defined somewhere
         } else {
             alert("ไม่สามารถอัปเดทราคารวมได้");
         }

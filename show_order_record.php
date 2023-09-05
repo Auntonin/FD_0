@@ -1,13 +1,14 @@
 <?php require_once("Condb.php");
+
 function checkuo(){
     global $conn ;
     $result=$conn->query("SELECT o.*,u.user_id FROM 
     orders o INNER JOIN users u ON o.user_id=u.user_id ");
     $rs=$result->fetch_array();
     $uo = array_search($_SESSION['uid'],$rs['user_id']);
-    if((string)$uo == ""){
+    if($uo == ""){
         alert("กรุณาสั่งอาหารก่อน");
-        go("index.php");	
+        // go("index.php");	
     }
 }
 checkuo();
@@ -26,6 +27,14 @@ checkuo();
     $result=$conn->query("SELECT o.*,u.user_name FROM 
     orders o INNER JOIN users u ON o.user_id=u.user_id 
     WHERE u.user_id='".$_SESSION['uid']."'");
+    function rname(){
+        global $conn;
+        $sql = "SELECT o.*,u.user_name FROM orders o INNER JOIN users u NO o.r_id=u.user_id WHERE u.user_id='".$_SESSION['uid']."' ";
+        $result = $conn->query($sql);
+        $rs=$result->fetch_array($sql);
+        $rn=$rs['user_name'];
+        return$rn;
+    }
     ?>
     <div class="container">
         <table class="table">
@@ -53,7 +62,7 @@ checkuo();
                 ?>
             <tr>
                 <th><?= $rs['o_id']?></th>
-                <th><?= $rs['user_name']?></th>
+                <th><?php rname() $rn?></th>
                 <th><?=  $osshow?></th>
                 <th><?= $rs['sumprice']?></th>
                 <th><?= $rs['date_time']?></th>
