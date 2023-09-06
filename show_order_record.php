@@ -1,17 +1,23 @@
 <?php require_once("Condb.php");
 
-function checkuo(){
-    global $conn ;
-    $result=$conn->query("SELECT o.*,u.user_id FROM 
-    orders o INNER JOIN users u ON o.user_id=u.user_id ");
-    $rs=$result->fetch_array();
-    $uo = array_search($_SESSION['uid'],$rs['user_id']);
-    if($uo == ""){
-        alert("กรุณาสั่งอาหารก่อน");
-        // go("index.php");	
-    }
-}
-checkuo();
+// function checkuo(){
+//     global $conn ;
+//     $result=$conn->query("SELECT o.*,u.user_id FROM 
+//     orders o INNER JOIN users u ON o.user_id=u.user_id");
+//     while ($rs = $result->fetch_array()){
+//         $i=0;
+//         $i=$i++;
+//         // $ouid=[];
+//         $ouid[$i]=$rs['user_id'];
+// //    echo $ouid[$i];
+//     }
+//     $uo = array_search($_SESSION['uid'],$ouid);
+//     if($uo == false){
+//         alert("กรุณาสั่งอาหารก่อน");
+//         go("index.php");	
+//     }
+// }
+// checkuo();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +46,6 @@ checkuo();
         <table class="table">
             <tr>
                 <th>รหัสคำสั่ง</th>
-                <th>ร้าน</th>
                 <th>สถาณะ</th>
                 <th>ราคารวม</th>
                 <th>สั่งเมื่อ</th>
@@ -62,7 +67,6 @@ checkuo();
                 ?>
             <tr>
                 <th><?= $rs['o_id']?></th>
-                <th><?php rname() $rn?></th>
                 <th><?=  $osshow?></th>
                 <th><?= $rs['sumprice']?></th>
                 <th><?= $rs['date_time']?></th>
