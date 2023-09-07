@@ -2,7 +2,6 @@
 require_once("../Condb.php");
 
 
-if($_SESSION['ulevel']==2){
 
 if(isset($_POST['cname'])&&  $_POST['cname']!=''){
  $cn= $_POST['cname'];
@@ -25,9 +24,6 @@ go ("delete_catagory.php");
     // go("../index.php");
 }
 
-}else{
-    go("../index.php");
-}
 $cid=$_GET['cate_id'];
 ?>
 
@@ -40,7 +36,7 @@ $cid=$_GET['cate_id'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../Bootstrap/cdn.jsdelivr.net_npm_bootstrap@4.0.0_dist_css_bootstrap.min.css">
+    <link rel="stylesheet" href="../Bootstrap/dist/css/bootstrap.min.css">  
 </head>
 <body>
     <div class="container">

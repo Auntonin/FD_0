@@ -5,24 +5,18 @@ if (isset($_POST["submit"])) {
     $targetDirectory = "../img/Profile/user/";
     $targetFile = $targetDirectory . basename($_FILES["image"]["name"]);
     $uploadOk = 1;
-    // $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
-
-    // ...
-
     if ($uploadOk == 1) {
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
             $filename = $_FILES["image"]["name"];
-            // Insert the filename into the database
             $sql = "UPDATE users SET user_image='".$filename."' WHERE user_id='".$_SESSION['uid']."'";
             if ($conn->query($sql) === TRUE) {
-                // echo "The file " . basename($_FILES["image"]["name"]) . " has been uploaded and saved to the database.";
-                // $_SESSION['pro_im'] = basename($_FILES["image"]["name"]) ;
+                alert("แก้ไขรูปภาพสำเร็จ");
                 go("edit_user.php");
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            alert("Sorry, there was an error uploading your file.");
         }
     }
 }

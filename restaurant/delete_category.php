@@ -12,7 +12,7 @@ require_once("../Condb.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../Bootstrap/cdn.jsdelivr.net_npm_bootstrap@4.0.0_dist_css_bootstrap.min.css">
+    <link rel="stylesheet" href="../Bootstrap/dist/css/bootstrap.min.css">  
 </head>
 <body>
     

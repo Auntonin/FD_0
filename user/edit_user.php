@@ -15,10 +15,10 @@ $un = $_SESSION['un'];
 <img src="../img/Profile/user/<?= $_SESSION['pro_im']?>" alt="Italian Trulli" class="mt-5" style="width:200px;height:200px;">
 
 <div class="main m-5">
-    <a class="btn btn-outline-primary me-2" href="edit_img.php?PROFILE" >EDIT PROFILE</a>
+    <a class="btn btn-outline-primary me-2" href="edit_img.php" >EDIT PROFILE</a>
     <a class="btn btn-outline-primary me-2" href="edit_name.php">EDIT USERNAME</a>
-    <a class="btn btn-outline-primary me-2" href="edit_pass.php?PASSWORD">EDIT PASSWORD</a>
-    <a class="btn btn-outline-primary me-2" href="edit_ad.php?ADDRESS">EDIT ADDRESS</a>
+    <a class="btn btn-outline-primary me-2" href="edit_pass.php">EDIT PASSWORD</a>
+    <a class="btn btn-outline-primary me-2" href="edit_ad.php">EDIT ADDRESS</a>
     <a class="btn btn-primary me-2" href="../index.php"> BACK TO INDEX</a>
 </div>
 
