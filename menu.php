@@ -1,5 +1,5 @@
-<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-  <h5 class="my-0 mr-md-auto font-weight-normal">FOOD_DELIVERY</h5>
+<div class="d-flex p-3 mb-3 align-items-center border-bottom">
+  <h5 class="mr-md-auto">FOOD_DELIVERY</h5>
   <nav class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-dark" href="index.php">HOME</a>
     <a class="p-2 text-dark" href="show_shop.php">SHOP</a>
@@ -7,12 +7,10 @@
     <?php if (isset($_SESSION['rr']) && isset($_SESSION['rd'])) {
       if ($_SESSION['rr'] == 0 || $_SESSION['rd'] == 0) {
     ?>
-
         <!-- Button trigger modal -->
         <a class="p-2 text-dark" data-toggle="modal" data-target="#exampleModalCenter">
           REGISTER
         </a>
-
         <!-- Modal -->
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -53,10 +51,10 @@
 
       
     <?php if (isset($_SESSION['rr']) && $_SESSION['rr'] == 2) { ?>
-      <a class="p-2 text-dark" href="restaurant.php">restaurant</a>
+      <a class="p-2 text-dark" href="restaurant/rest.php">restaurant</a>
     <?php }
       if (isset($_SESSION['rd']) && $_SESSION['rd'] == 2) { ?>
-      <a class="p-2 text-dark" href="raider.php">raider</a><?php } ?>
+      <a class="p-2 text-dark" href="raider/raider.php">raider</a><?php } ?>
       <form class="form-inline" action="show_shop.php" method="POST">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
     <button class="btn btn-outline-success m-2 my-sm-0" type="submit">Search</button>

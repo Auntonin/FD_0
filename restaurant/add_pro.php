@@ -20,17 +20,16 @@ if (isset($_POST['pro_name']) && $_POST['pro_name'] !== '') {
 
         $sql = "INSERT INTO product (cate_id, pro_name, pro_price, pro_discount, r_id,pro_image) VALUES ('$cid', '$pn', '$pp', '$pdc', '" . $_SESSION['uid'] . "','$filename')";
 
-        if ($conn->query($sql1)) {
-            echo '<script>alert("เพิ่มสินค้าสำเร็จ");</script>';
-            echo '<script>window.location.href="rest.php";</script>';
+        if ($conn->query($sql)) {
+            alert("เพิ่มสินค้าสำเร็จ");
+            go("rest.php");
         } else {
-            echo '<script>alert("เพิมสินค้าไม่สำเร็จ");</script>';
+            alert("เพิ่มสินค้าไม่สำเร็จ");
         }
     } else {
-        echo '<script>alert("ชื่อสินค้านี้มีอยู่แล้ว");</script>';
-    }
+        alert("ชื่อสินค้านี้มีอยู่แล้ว");    }
 } else {
-    // go("../index.php");
+    //ไม่มีชื่อสินค้าส่งมา
 }
 ?>
 <!DOCTYPE html>
@@ -49,7 +48,7 @@ if (isset($_POST['pro_name']) && $_POST['pro_name'] !== '') {
         <form class="form" method="post" enctype="multipart/form-data">
             <h1 class="h3 mb-3 font-weight-normal">เพิ่มรายการอาหาร</h1>
             <p>เลือกประเภทอาหาร</p>
-            <select name="cate_id">
+            <select name="cate_id" require>
                 <option value="">เลือก</option>
                 <?php
                 $result = $conn->query("SELECT * FROM category");

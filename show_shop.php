@@ -18,8 +18,6 @@ checklogin(); ?>
 
       <table class="table table-striped">
         <tr>
-
-          <th>รหัสร้านอาหาร</th>
           <th>รูปร้านอาหาร</th>
           <th>ประเภทร้านอาหาร</th>
           <th>ชื่อร้านอาหาร</th>
@@ -43,9 +41,6 @@ checklogin(); ?>
           $rid = $rs['user_id'];
         ?>
           <tr>
-            <td>
-              <?= $rs['user_id']; ?>
-            </td>
             <td>
               <img src="img/Profile/user/<?= $rs['user_image'] ?>" width="120" height="110">
             </td>

@@ -59,11 +59,11 @@ checkr();
                     <?= $rs['pro_price']?>
                 </td>
                 <td>
-                    <?= $rs['pro_discount']?>
+                    <?= $rs['pro_discount']?>%
                 </td>
                 <td>
-                <a class="btn btn-outline-primary" href="#">EDIT</a>
-                <a class="btn btn-outline-danger" href="#">DELETE</a>
+                <a class="btn btn-outline-primary" href="edit_pro.php?pid=<?= $rs['pro_id']?>">EDIT</a>
+                <a class="btn btn-outline-danger" href="delete_pro.php?pid=<?= $rs['pro_id']?>">DELETE</a>
                 </td>
             </tr>
             <?php
