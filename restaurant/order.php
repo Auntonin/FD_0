@@ -1,4 +1,14 @@
 <?php require_once("../Condb.php");
+if(isset($_POST['submit'])&&$_POST['submit']!=""){
+    $oid=$_POST['submit'];
+    $sql="UPDATE orders SET o_status=3 WHERE o_id='$oid'";
+    if($conn->query($sql)){
+        alert("ส่งสินค้าให้raiderสำเร็จ");
+        go("rest.php");
+    }else{
+        alert("ส่งสินค้าให้raiderไม่สำเร็จ");
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +31,7 @@
                 <th>สถาณะ</th>
                 <th>ราคารวม</th>
                 <th>สั่งเมื่อ</th>
-                <th>รีวิว</th>
+                <th>ออร์เดอร์</th>
             </tr>
             <?php while($rs=$result->fetch_array()){
                 $os=$rs['o_status'];
@@ -42,9 +52,14 @@
                 <th><?=  $osshow?></th>
                 <th><?= $rs['sumprice']?></th>
                 <th><?= $rs['date_time']?></th>
+                <?php if($os==0){ ?>
                 <th><a class="btn btn-outline-primary" href="view.php?oid=<?= $rs['o_id']?>">view</a></th>
+                <?php }elseif($os==2){ ?>
+                    <form method="POST">
+                <th><button type="submit" class="btn btn-outline-primary" name="submit" VALUE="<?= $rs['o_id']?>">submit</a></th>
+                </form>
             </tr>
-            <?php }?>
+            <?php } }?>
         </table>
 
     </div>
