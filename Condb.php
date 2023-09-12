@@ -93,9 +93,17 @@ function checkr()
   }
 }
 
+function checkrd()
+{
+  if (isset($_SESSION['rd']) && $_SESSION['rd'] == '2') {
+  } else {
+    go("../index.php");
+  }
+}
+
 function getdt(){
   date_default_timezone_set('asia/bangkok'); // Set the timezone to New York
-  $currentDateTime = date('d-m-Y H:i:s'); // Format: Year-Month-Day Hour:Minute:Second
+  $currentDateTime = date('Y-m-d H:i:s'); // Format: Year-Month-Day Hour:Minute:Second
   return $currentDateTime;
 }
 
