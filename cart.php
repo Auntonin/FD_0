@@ -20,9 +20,6 @@ if (isset($_SESSION['un'])) {
     </head>
 
     <body>
-
-    
-
         <!-- nav_bar -->
         <?php require_once('menu.php'); ?>
         <!-- end_nav_bar -->

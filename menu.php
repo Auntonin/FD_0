@@ -8,11 +8,11 @@
       if ($_SESSION['rr'] == 0 || $_SESSION['rd'] == 0) {
     ?>
         <!-- Button trigger modal -->
-        <a class="p-2 text-dark" data-toggle="modal" data-target="#exampleModalCenter">
+        <a class="p-2 text-dark" data-toggle="modal" data-target="#RegisterModal">
           REGISTER
         </a>
         <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal fade" id="RegisterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">

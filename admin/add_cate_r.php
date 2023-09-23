@@ -1,6 +1,6 @@
 <?php
-   require_once('../condb.php');
-   checkad();
+   require_once("../Condb.php");
+
     if (isset($_POST['cate_r']) && trim($_POST['cate_r']) != "") {
         $crn=$_POST['cate_r'];
         $sql = "SELECT cr_name FROM cate_restaurant WHERE cr_name = '" . trim($crn) . "'";
@@ -30,7 +30,7 @@
     <?php require_once("menu.php");?>
     <div class="container">
 <div class="main m-5">
-        <form class="form-signin" action="" method="post">
+        <form class="form" action="" method="post">
             <div class="form-inline">
                 <label class="m-5" for="cate_name">ประเภทร้านค้า</label>
                 <input type="text" class="form-control" name="cate_r" id="cate_name"
