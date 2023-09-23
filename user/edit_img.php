@@ -29,7 +29,7 @@ if (isset($_POST["submit"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../Bootstrap/dist/css/bootstrap.min.css">    
-    <link href="../login_menu.css" rel="stylesheet">
+    <link href="../Bootstrap/dist/css/login_menu.css" rel="stylesheet">
 </head>
 <body class="text-center">
     <form class="form-signin" method="POST" enctype="multipart/form-data">

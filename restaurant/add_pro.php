@@ -47,6 +47,7 @@ if (isset($_POST['pro_name']) && $_POST['pro_name'] !== '') {
     <div class="container">
         <form class="form" method="post" enctype="multipart/form-data">
             <h1 class="h3 mb-3 font-weight-normal">เพิ่มรายการอาหาร</h1>
+            <select name="cate_id">
                 <option value="">เลือก</option>
                 <?php
                 $result = $conn->query("SELECT * FROM category");

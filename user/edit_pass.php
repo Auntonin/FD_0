@@ -34,7 +34,7 @@ if(isset($_POST['userpass1'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../Bootstrap/dist/css/bootstrap.min.css">    
-    <link href="../login_menu.css" rel="stylesheet"></head>
+    <link href="../Bootstrap/dist/css/login_menu.css" rel="stylesheet"></head>
 
 <body>
 <body class="text-center">

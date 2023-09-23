@@ -1,21 +1,22 @@
-<?php require_once("Condb.php")?>
+<?php require_once("Condb.php") ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Bootstrap/dist/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="Bootstrap/dist/css/bootstrap.min.css">
 </head>
+
 <body>
-    <?php require_once("menu.php")?>
-   <div class="container">
-  
-</div>
- <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script> -->
- <script src="Bootstrap/dist/js/code.jquery.com_jquery-3.7.1.min.js"></script>
-   <script src="Bootstrap/dist/js/bootstrap.min.js"></script>
-   <!-- <script src="Bootstrap\js\src\dropdown.js"></script> -->
-   
+    <?php require_once("menu.php") ?>
+    <div class="container">
+        <div class="main">
+            <h1 class="mx-auto my-5" style="width:200px;height:200px;">HOME</h1>
+        </div>
+    </div>
+    <script src="Bootstrap/dist/js/code.jquery.com_jquery-3.7.1.min.js"></script>
+    <script src="Bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
+
 </html>
