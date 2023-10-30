@@ -40,9 +40,8 @@ if (isset($_SESSION['un'])) {
                   <th>ลบรายการ</th>
                 </tr>
 
-                <?php
+                <?php 
                 $Total = 0;
-                $sumall = 0;
                 $ord = 1;
                 $sumall = 0;
                 for ($i = 0; $i <= (int) $_SESSION["intLine"]; $i++) {
@@ -56,7 +55,7 @@ if (isset($_SESSION['un'])) {
                     $discount = $_SESSION["discount"][$i]; // Get the discount percentage
                     $discountedPrice = $_SESSION["price"][$i] * (1 - ($discount / 100)); // Calculate the discounted price
                     $sump = $Total * $discountedPrice; // Calculate the sum for this product
-                    $sumall = $sumall + $sump;
+                    $sumall =$sumall + $sump;
                     ?>
                     <tr>
                       <td>

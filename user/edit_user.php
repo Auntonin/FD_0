@@ -12,7 +12,7 @@ $un = $_SESSION['un'];
 </head>
 <body><div class="container">
     <h1 >EDIT USER</h1>
-<img src="../img/Profile/user/<?= $_SESSION['pro_im']?>" alt="Italian Trulli" class="mt-5" style="width:200px;height:200px;">
+<img src="../img/Profile/user/<?= $_SESSION['pro_im']?>"  class="mt-5" style="width:200px;height:200px;">
 <h3>user : <?= $un ?></h3>
 <div class="main m-5">
     <a class="btn btn-outline-primary me-2" href="edit_img.php" >EDIT PROFILE</a>

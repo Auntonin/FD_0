@@ -14,7 +14,7 @@ checklogin(); ?>
 <body>
   <?php require_once("menu.php"); ?>
   <div class="cotainer">
-    <div class="main">
+    <div class="main">ี
 
       <table class="table table-striped">
         <tr>

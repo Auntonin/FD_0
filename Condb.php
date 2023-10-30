@@ -1,8 +1,8 @@
 <?php
 session_start();
 $servername = "localhost";
-$username = "food";
-$password = "bnccFoodService";
+$username = "root";
+$password = "";
 $dbname = "food";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

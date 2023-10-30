@@ -50,7 +50,7 @@ checklogin();
                     <th>ดูสินค้า</th>
                 </tr>
                 <?php
-                if (isset($_GET['cate']) && isset($_GET['r_id']) && $_GET['cate'] !== "") {
+                if (isset($_GET['cate']) && isset($_GET['r_id']) && $_GET['cate'] != "") {
                     $cate = $_GET['cate'];
                     $rid = $_GET['r_id'];
                     $sql = "SELECT p.*, c.cate_name FROM product p INNER JOIN category c ON p.cate_id = c.cate_id WHERE p.cate_id='$cate' AND p.r_id='$rid'";
