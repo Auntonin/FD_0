@@ -53,12 +53,12 @@ checklogin();
                 if (isset($_GET['cate']) && isset($_GET['r_id']) && $_GET['cate'] != "") {
                     $cate = $_GET['cate'];
                     $rid = $_GET['r_id'];
-                    $sql = "SELECT p.*, c.cate_name FROM product p INNER JOIN category c ON p.cate_id = c.cate_id WHERE p.cate_id='$cate' AND p.r_id='$rid'";
+                    $sql = "SELECT p.*, c.cate_name FROM products p INNER JOIN category c ON p.cate_id = c.cate_id WHERE p.cate_id='$cate' AND p.rest_id='$rid'";
                 } elseif (isset($_GET['r_id'])) {
                     $rid = $_GET['r_id'];
                     $sql = "SELECT p.*, c.cate_name
-                        FROM product p INNER JOIN category c
-                     ON p.cate_id = c.cate_id WHERE p.r_id='$rid'";
+                        FROM products p INNER JOIN category c
+                     ON p.cate_id = c.cate_id WHERE p.rest_id='$rid'";
                 } else {
                     alert("กรุณาเลือกร้านอาหารใหม่");
                     go("show_shop.php");
@@ -70,7 +70,7 @@ checklogin();
                 ?>
                         <tr>
                             <td>
-                                <img src="img/product/<?= $rs['pro_image'] ?>" width="120" height="110" alt="<?= $rs['pro_name']; ?>">
+                                <img src="img/products/<?= $rs['pro_image'] ?>" width="120" height="110" alt="<?= $rs['pro_name']; ?>">
                             </td>
                             <td>
                                 <?= $rs['pro_name']; ?>

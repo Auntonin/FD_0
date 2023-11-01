@@ -23,22 +23,16 @@ function alert($txt)
 {
   echo  "<script> alert('$txt')</script>";
 }
- 
+function qs($sql)
+{
+  global $conn;
+  return $conn->query($sql);
+}
+function chackp($txt){
+  return isset($_POST[$txt]) && trim($_POST[$txt]) != '';
+}
 
-  // function jconfirm() {
-  //   <script>
-  //   let text;
-  //   if (confirm("Press a button!")) {
-  //     text = "You pressed OK!";
-  //   } else {
-  //     text = "You canceled!";
-  //   }
-  //   </script>
-  // }
 
-  
-
-// ban & update_session
 
 function check()
 {
@@ -49,12 +43,10 @@ if(isset($_SESSION['uid'])&&$_SESSION['uid']!=""){
 $us= $rs['user_status'];
   $_SESSION['uid'] = $rs['user_id'];
   $_SESSION['un'] = $rs['user_name'];
-  // $_SESSION['us'] = $rs['user_satus'];
   $_SESSION['ulevel'] = $rs['user_level'];
   $_SESSION['pro_im'] = $rs['user_image'];
-  $_SESSION['rr'] = $rs['restaurant'];
-  $_SESSION['rd'] = $rs['raider'];
-// echo $us;
+  $_SESSION['rr'] = $rs['restaurant_status'];
+  $_SESSION['rd'] = $rs['raider_status'];
   if ($us != "") {
     if($us==0){
       alert("โดนban");

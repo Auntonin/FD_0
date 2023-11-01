@@ -21,7 +21,7 @@ if(isset($_POST['submit'])&&$_POST['submit']!=""){
 
 <body>
     <?php require_once("menu.php");
-    $sql = "SELECT * FROM orders WHERE r_id='".$_SESSION['uid']."' ";
+    $sql = "SELECT * FROM orders WHERE rest_id='".$_SESSION['uid']."' ";
     $result=$conn->query($sql);
     ?>
     <div class="container">

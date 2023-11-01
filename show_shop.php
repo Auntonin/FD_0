@@ -26,15 +26,15 @@ checklogin(); ?>
         <?php
         if (isset($_POST['keyword']) && $_POST['keyword'] != '') {
           $keyword = $_POST['keyword'];
-          $sql = "SELECT u.*,c.cr_name FROM 
+          $sql = "SELECT u.*,c.cate_rest_name FROM 
                     users u INNER JOIN cate_restaurant c
-                    ON u.cr_id = c.cr_id 
-                    WHERE u.restaurant=2 AND u.user_name LIKE  '%$keyword%'";
+                    ON u.cate_rest_id = c.cate_rest_id
+                    WHERE u.restaurant_status=2 AND u.user_name LIKE  '%$keyword%'";
         } else {
-          $sql = "SELECT u.*,c.cr_name FROM 
+          $sql = "SELECT u.*,c.cate_rest_name FROM 
                     users u INNER JOIN cate_restaurant c
-                    ON u.cr_id = c.cr_id 
-                    WHERE u.restaurant=2";
+                    ON u.cate_rest_id = c.cate_rest_id
+                    WHERE u.restaurant_status=2";
         }
         $result = $conn->query($sql);
         while ($rs = $result->fetch_assoc()) {
@@ -45,7 +45,7 @@ checklogin(); ?>
               <img src="img/Profile/user/<?= $rs['user_image'] ?>" width="120" height="110">
             </td>
             <td>
-              <?= $rs['cr_name'] ?>
+              <?= $rs['cate_rest_name'] ?>
             </td>
             <td>
               <?= $rs['user_name'] ?>

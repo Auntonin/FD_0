@@ -38,7 +38,7 @@ checkr();
             </th>
         </tr>
         <?php 
-        $sql="SELECT p.*,c.cate_name FROM product p INNER JOIN category c ON p.cate_id=c.cate_id WHERE p.r_id='".$_SESSION['uid']."'";
+        $sql="SELECT p.*,c.cate_name FROM products p INNER JOIN category c ON p.cate_id=c.cate_id WHERE p.rest_id='".$_SESSION['uid']."'";
         $result=$conn->query($sql);
         while($rs=$result->fetch_array()){
             ?>

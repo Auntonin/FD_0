@@ -1,13 +1,13 @@
 <?php require_once("../Condb.php");
 if(isset($_GET['vid'])&&$_GET['vid']!=""){
-  $sql="UPDATE users SET restaurant=2 WHERE user_id='".$_GET['vid']."'";
+  $sql="UPDATE users SET restaurant_status=2 WHERE user_id='".$_GET['vid']."'";
   if($rs=$conn->query($sql)){
 alert("อนุญาตแล้ว");
   }else{
     alert("ไม่สามารถอนุญาตได้");
   }
 }elseif(isset($_GET['did'])&&$_GET['did']!=""){
-  $sql="UPDATE users SET restaurant=0,cr_id=0 WHERE user_id='".$_GET['did']."'";
+  $sql="UPDATE users SET restaurant_status=0,cate_rest_id=0 WHERE user_id='".$_GET['did']."'";
   if($rs=$conn->query($sql)){
 alert("ระงับบัชี restaurant แล้ว");
   }else{

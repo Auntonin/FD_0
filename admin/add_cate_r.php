@@ -3,10 +3,10 @@
 
     if (isset($_POST['cate_r']) && trim($_POST['cate_r']) != "") {
         $crn=$_POST['cate_r'];
-        $sql = "SELECT cr_name FROM cate_restaurant WHERE cr_name = '" . trim($crn) . "'";
+        $sql = "SELECT cr_name FROM cate_restaurant WHERE cate_rest_name = '" . trim($crn) . "'";
         $result = $conn->query($sql);
         if ($result->num_rows == 0) {
-            $sql = "INSERT INTO cate_restaurant(cr_name) VALUES('$crn')";
+            $sql = "INSERT INTO cate_restaurant(cate_rest_name) VALUES('$crn')";
             $result = $conn->query($sql);
           go("admin.php");
         } else {

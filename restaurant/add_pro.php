@@ -7,7 +7,7 @@ if (isset($_POST['pro_name']) && $_POST['pro_name'] !== '') {
     $pp = $_POST['pro_price'];
     $pdc = $_POST['pro_dc'];
 
-    $sql = "SELECT * FROM product WHERE pro_name='$pn'";
+    $sql = "SELECT * FROM products WHERE pro_name='$pn'";
     $result = $conn->query($sql);
 
     if ($result->num_rows == 0) {
@@ -18,7 +18,7 @@ if (isset($_POST['pro_name']) && $_POST['pro_name'] !== '') {
             $filename = $_FILES["pro_img"]["name"];
         }
 
-        $sql = "INSERT INTO product (cate_id, pro_name, pro_price, pro_discount, r_id,pro_image) VALUES ('$cid', '$pn', '$pp', '$pdc', '" . $_SESSION['uid'] . "','$filename')";
+        $sql = "INSERT INTO product (cate_id, pro_name, pro_price, pro_discount, rest_id,pro_image) VALUES ('$cid', '$pn', '$pp', '$pdc', '" . $_SESSION['uid'] . "','$filename')";
 
         if ($conn->query($sql)) {
             alert("เพิ่มสินค้าสำเร็จ");

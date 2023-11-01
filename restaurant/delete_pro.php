@@ -3,10 +3,10 @@ require_once("../Condb.php");
 if (isset($_GET['pid']) && $_GET['pid'] != '') {
     $pid = $_GET['pid'];
    
-    $sql = "SELECT * FROM product WHERE pro_id='$pid'";
+    $sql = "SELECT * FROM products WHERE pro_id='$pid'";
     $result = $conn->query($sql);
     if ($result->num_rows == 1) {
-        $sql = "DELETE FROM product WHERE pro_id='$pid'";
+        $sql = "DELETE FROM products WHERE pro_id='$pid'";
         if ($conn->query($sql)) {
             alert("ลบสินค้าสำเร็จ");
             go("rest.php");
