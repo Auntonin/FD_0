@@ -41,13 +41,13 @@ checkrd();
             <?php 
             if(isset($_GET['rid'])&&($_GET['rid']!="")){
                 $rid=$_GET['rid'];
-                $sql = "SELECT o.*,u.* FROM orders o INNER JOIN users u ON o.user_id=u.user_id WHERE o.o_status=1 AND o.r_id='$rid'";
+                $sql = "SELECT o.*,u.* FROM orders o INNER JOIN users u ON o.user_id=u.user_id WHERE o.order_status=1 AND o.rest_id='$rid'";
             }else{
-                $sql = "SELECT o.*,u.* FROM orders o INNER JOIN users u ON o.user_id=u.user_id WHERE o.o_status=1 OR o.rd_id='" . $_SESSION['uid'] . "'";
+                $sql = "SELECT o.*,u.* FROM orders o INNER JOIN users u ON o.user_id=u.user_id WHERE o.order_status=1 OR o.raider_id='" . $_SESSION['uid'] . "'";
             }
             $result = $conn->query($sql);
             while ($rs = $result->fetch_array()) {
-                $os = $rs['o_status'];
+                $os = $rs['order_status'];
                 if ($os == 0) {
                     $osshow = "ร้านค้ายังไม่ได้รับออร์เดอร์";
                 } elseif ($os == 1) {
@@ -60,15 +60,15 @@ checkrd();
                     $osshow = "ออร์เดอร์ถูกส่งแล้ว";
                 }
             ?>
-                <td><?= $rs['o_id'] ?></td>
+                <td><?= $rs['order_id'] ?></td>
                 <td><?= $rs['user_name'] ?></td>
                 <td><?= $rs['sumprice'] ?></td>
                 <td><?= $osshow ?></td>
-                <td><?= $rs['user_ad'] ?></td>
+                <td><?= $rs['user_adderss'] ?></td>
                 <td><?php if ($os == 1) { ?>
-                    <a class="btn btn-outline-primary" href="order.php?oid1=<?= $rs['o_id'] ?>">submit</a>
+                    <a class="btn btn-outline-primary" href="order.php?oid1=<?= $rs['order_id'] ?>">submit</a>
                 <?php } elseif ($os == 3) { ?>
-                    <a class="btn btn-primary" href="order.php?oid2=<?= $rs['o_id'] ?>">submit</a>
+                    <a class="btn btn-primary" href="order.php?oid2=<?= $rs['order_id'] ?>">submit</a>
                 <?php } ?>
                 </td>
                 </tr>

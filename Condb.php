@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 
 function go($txt)
 {
-  echo  "<script >window.location.replace('".$txt."');</script>";
+  echo  "<script>window.location.replace('".$txt."');</script>";
 }
 
 function alert($txt)

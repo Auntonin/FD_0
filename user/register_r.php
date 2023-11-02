@@ -6,7 +6,7 @@ require_once("../Condb.php");
 if(isset($_POST['request'])){
     $crid=$_POST['cate_r'];
     if($crid!=""){
-        $sql="UPDATE users SET restaurant=1,cr_id='".$crid."' WHERE user_id='".$_SESSION['uid']."'";
+        $sql="UPDATE users SET restaurant_status=1,cate_rest_id='".$crid."' WHERE user_id='".$_SESSION['uid']."'";
         if($result=$conn->query($sql)){
             alert("ขอเป็นร้านอาหารสำเร็จ");
             go("../index.php");
@@ -36,7 +36,7 @@ if(isset($_POST['request'])){
         <?php $sql="SELECT * FROM cate_restaurant";
       $result=$conn->query($sql);
       while($rs=$result->fetch_array()){?>
-        <option  value="<?=$rs['cr_id']?>"><?=$rs['cr_name']?></option>
+        <option  value="<?=$rs['cate_rest_id']?>"><?=$rs['cate_rest_name']?></option>
         <?php }?>
       </select>
          <button class="btn btn-lg btn-primary btn-block mt-5" type="submit" name="request">Request</button>

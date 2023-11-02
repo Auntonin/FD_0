@@ -35,7 +35,7 @@ alert("ระงับบัชี raider แล้ว");
                     <th>ระงับ</th>
                   </tr>
                   <?php
-               $sql = "SELECT * FROM users WHERE raider>0 ";
+               $sql = "SELECT * FROM users WHERE raider_status>0 ";
                   $result = $conn->query($sql);
                   while ($rs = $result->fetch_array()) {
                         $rdid = $rs['user_id'];

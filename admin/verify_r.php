@@ -35,7 +35,7 @@ alert("ระงับบัชี restaurant แล้ว");
                         <th>ระงับ</th>
                   </tr>
                   <?php
-               $sql = "SELECT u.*,c.cr_name FROM users u INNER JOIN cate_restaurant c ON u.cr_id =c.cr_id ";
+               $sql = "SELECT u.*,c.cate_rest_name FROM users u INNER JOIN cate_restaurant c ON u.cate_rest_id =c.cate_rest_id ";
                   $result = $conn->query($sql);
                   while ($rs = $result->fetch_array()) {
                         $cn = $rs['user_name'];

@@ -4,7 +4,7 @@ require_once("../Condb.php");
 
 
 if(isset($_POST['request'])){
-    $sql="UPDATE users SET raider=1 WHERE user_id='".$_SESSION['uid']."'";
+    $sql="UPDATE users SET raider_status=1 WHERE user_id='".$_SESSION['uid']."'";
     if($result=$conn->query($sql)){
         alert("ขอเป็นผู้ส่งอาหารสำเร็จ");
         go("../index.php");
